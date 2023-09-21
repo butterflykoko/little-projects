@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#piano-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  min-width: 80vw;
+}
+
+li {
+  list-style: none;
+  display: inline;
+}
+
+#piano {
+  padding: 35px 40px;
+  border-radius: 20px;
+  background-color: #202020;
+}
+
+#piano header {
+  display: flex;
+  color: #fff;
+  align-items: center;
+}
+
+#document-title {
+  font-size: 1.6rem;
+}
+
+/* Piano Keys */
+.piano-keys {
+  display: flex;
+  list-style: none;
+  margin-top: 40px;
+}
+
+.piano-keys .key {
+  cursor: pointer;
+  user-select: none;
+  position: sticky;
+}
+
+.piano-keys .black {
+  z-index: 2;
+  height: 140px;
+  width: 44px;
+  margin: 0 -22px 0 -22px;
+  border-radius: 0 0 5px 5px;
+  background: #333;
+}
+
+.piano-keys .black.active {
+  box-shadow: inset -5px -10px 10px rgba(255, 255, 255, 0.1);
+}
+
+.piano-keys .white {
+  height: 200px;
+  width: 60px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+.piano-keys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.piano-keys .key span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  color: #a2a2a2;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.piano-keys .black span {
+  bottom: 12px;
+  color: #888888;
+}
+
+/* Screen Response */
+@media (max-width: 620px) {
+  #piano-body {
+    padding: 25px;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  header :where(h1) {
+    margin-bottom: 12px;
+  }
+
+  .piano-keys {
+    margin-top: 20px;
+  }
+
+  .piano-keys .key:where(:nth-child(9), :nth-child(10)) {
+    display: none;
+  }
+
+  .piano-keys .black {
+    height: 100px;
+    width: 40px;
+    margin: 0 -20px 0 -20px;
+  }
+
+  .piano-keys .white {
+    height: 180px;
+    width: 60px;
+  }
+}
+
+@media (max-width: 620px) {
+  .piano-keys .key:nth-child(13),
+  .piano-keys .key:nth-child(14),
+  .piano-keys .key:nth-child(15),
+  .piano-keys .key:nth-child(16),
+  .piano-keys .key :nth-child(17) {
+    display: none;
+  }
+  .piano-keys .white {
+    width: 50px;
+  }
+
+  #piano-body {
+    overflow: hidden; 
+  }
+}

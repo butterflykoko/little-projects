@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link href="./style-sheets/index.css" rel="stylesheet" />
+    <style>
+      .flex-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+      }
+
+      #grid-container {
+        display: grid;
+        grid-template: 1fr / repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      #piano-desc {
+        width: 20vw;
+      }
+
+      @media (max-width: 768px) {
+        #grid-container {
+          grid-template: repeat(2, 1fr) / 1fr;
+        }
+
+        #piano-desc {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg top-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img src="./assets/icons/columns-gap.svg" alt="columns-gap" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="./index.html"
+              >Home</a
+            >
+            <a class="nav-link" href="./public/search.html" aria-label="Search">
+              <img src="./assets/icons/search.svg" alt="search icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="my-5 text-center">
+        <h1 class="display-4 fw-bold">Collection of My Projects</h1>
+        <p class="lead mb-4 body-font">
+          A place where my projects can be accessed
+        </p>
+        <div class="container px-5">
+          <img
+            src="./assets/images/books.jpg"
+            class="img-fluid"
+            alt="stacked books"
+            width="300px"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container mb-5">
+      <hr />
+    </div>
+    <div class="container flex-container">
+      <div id="grid-container">
+        <img
+          src="./assets/images/piano-preview.png"
+          class="img-fluid border"
+          alt="piano"
+          width="400px"
+        />
+        <div id="piano-desc">
+          <h2>Playable Piano</h2>
+          <p class="body-font">
+            Small piano conisting of 17 notes. Simply click or use a keyboard to
+            play. When using a keyboard, press the letters or symbols that the
+            piano shows.
+          </p>
+          <a
+            class="btn btn-yellow "
+            href="./public/piano/index.html"
+            role="button"
+            >Piano</a
+          >
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/typescript/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+h1, p {
+  text-align: center;
+}
+
+#block {
+  display: flex;
+  padding: 2rem;
+  background-color: #fef3ba80;
+  border: 1px #33333328 solid;
+}
+
+#block > div {
+  flex: 1;
+  height: 200px;
+  border: 1px #33333314 solid;
+}
+
+.white-block {
+  background-color: #ffffff;
+}
+
+.blue-block {
+  background-color: #daeaff;
+}
+
+/* Animation */
+.white-block:active, .blue-block:active {
+  animation: fade-out 5s ease;
+}
+
+.white-block:not(:active), .blue-block:not(:active){
+  animation: fade-in 5s ease;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 0%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+  
+  to {
+    opacity: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+body {
+  min-height: 100vh;
+  position: relative; 
+  margin: 0;
+  padding: 0; 
+  font-family: "Montserrat", sans-serif;
+}
+
+.body-font {
+  font-family: "Quicksand", sans-serif;
+}
+
+.top-nav {
+  background-color: #daeaff;
+}
+
+.btn-yellow {
+  background-color: #fef3ba;
+  border: 1px #ffed96 solid;
+  transition-duration: 200ms;
+}
+
+.btn-yellow:hover {
+  border: 1px #fceea9 solid;
+  background-color: #fef3ba80;
+  transition-delay: 50ms;
+}
