@@ -1,19 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
-# from scipy import stats
+from scipy import stats
 
 x = np.array([2, 2, 4, 4, 4,  5, 6, 6])
 y = np.array([3, 3, 3, 4, 4, 5, 5, 5])
 
+slope, intercept, r, std_err = stats.linregress(x,y)
+
+def myfunc(x):
+  return slope * x + intercept
+
+model = list(map(myfunc, x))
+
 plt.scatter(x, y)
+plt.plot(x, model)
 plt.show()
-
-
-
-def slope(x1, y1, x2, y2):
-  rise = y2 - y1
-  run = x2 - x1
-  k = rise/run
-  print(k)
-
-slope(1, 2, 3, 4)
