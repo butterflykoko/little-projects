@@ -13,7 +13,7 @@ def myfunc(x):
 
 year = 5
 price = myfunc(year)
-txt = "The price for the apples per {year}: {}"
+txt = "The price for the apples is {} for {} year(s)"
 
 model = list(map(myfunc, x))
 
@@ -21,4 +21,4 @@ plt.scatter(x, y)
 plt.plot(x, model)
 plt.show()
 
-print(txt.format(round(price, 2)))
+print(txt.format(round(price, 2), year))
