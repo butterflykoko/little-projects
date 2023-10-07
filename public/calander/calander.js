@@ -89,13 +89,31 @@ let days = () => {
       m = 31;
   }
 
-  
-  let today;
+  let num = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+  ];
+
+  let numbers = () => {
+    let i = 0;
+    while (i < m) {
+      for (let j of num) {
+        j++;
+        return num;
+      }
+    }
+
+    return num;
+  };
+
+  numbers();
 
   for (let i; i >= m; i++) {
-
+    const li = document.createElement("li");
+    let n = document.createTextNode(numbers());
+    li.appendChild(n);
+    document.getElementById("days").appendChild(li);
   }
-
 };
 
 days();
