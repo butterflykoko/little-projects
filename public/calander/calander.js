@@ -51,11 +51,9 @@ header();
 
 const days = () => {
   var day = document.getElementById("days").innerHTML;
-  let day1 = new Date(year, month, 1).getDay();
 
   let endDate = new Date(year, month + 1, 0).getDate();
   let lastDay = new Date(year, month, endDate).getDay();
-
   let i = 1;
 
   for (i <= endDate; i++; ) {
