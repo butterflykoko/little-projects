@@ -1,11 +1,11 @@
-"use strict";
 const date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth();
 
 let header = () => {
-  let currdate = document.querySelector(".month-year");
+  let header = document.querySelector(".month-year");
   let m;
+
   switch (new Date().getMonth()) {
     case 0:
       m = "January";
@@ -44,37 +44,36 @@ let header = () => {
       m = "December";
   }
 
-  return (currdate.innerHTML = m + " " + year);
+  return (header.innerHTML = m + " " + year);
 };
 
 header();
 
-const days = () => {
-  var day = document.getElementById("days").innerHTML;
-
+let days = () => {
+  let day = document.getElementById("days").innerHTML;
   let endDate = new Date(year, month + 1, 0).getDate();
   let lastDay = new Date(year, month, endDate).getDay();
-  let i = 1;
 
-  for (i <= endDate; i++; ) {
+  for (let i = 1; i <= endDate; i++) {
+    const li = document.createElement("li");
+    const num = document.createTextNode(i);
+    li.appendChild(num);
+
     if (i === date.getDate()) {
-      const li = document.createElement("li");
-      const num = document.createTextNode(i);
-
-      li.appendChild(num);
+      let el = document.getElementById("days").appendChild(li);
+      el.classList.add("active");
+    } else {
       day += document.getElementById("days").appendChild(li);
     }
   }
 
-  for (let j = lastDay; j < 6; i++) {  
+  for (let j = lastDay; j < 6; j++) {
     const li = document.createElement("li");
-    const num = document.createTextNode(j - lastDay);
-
-    li.appendChild(num);
+    const n = document.createTextNode(j - lastDay + 1);
+    li.appendChild(n);
     let el = document.getElementById("days").appendChild(li);
-    day += el.classList.add("inactive");
+    el.classList.add("inactive");
   }
-
 };
 
 days();

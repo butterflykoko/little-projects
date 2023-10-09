@@ -26,19 +26,20 @@ ul {
   padding: 0.8rem 0;
 }
 
-.days {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0;
-  padding: 0.5rem;
+#days {
+  display: grid;
+  grid-template: repeat(5, 1fr) /  repeat(7, 1fr);
+  gap: 2rem;
+  justify-items: center;
 }
 
-.days > .active {
+.active {
     background-color: #fdfad9;
-    padding: 0.25rem;
+    width: 20px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .inactive {
-  color: #333333;
+  color: #777777;
 }
