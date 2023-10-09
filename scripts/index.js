@@ -1,62 +1,12 @@
-const http = require("http");
-const fs = require("fs");
+const express = require("express"),
+  app = express(),
+  home = require("./routes/home"),
+  public = require("./routes/public");
 
-http
-  .createServer(function (req, res) {
-    let r = req.url;
-    
-    switch (req.url) {
-      case r == "/index.html":
-        fs.readFile("../index.html", function (err, data) {
-          if (err) {
-            res.writeHead(404, { "Content-Type": "text/html" });
-            return res.end("404 Not Found");
-          }
-          res.writeHead(200, { "Content-Type": "text/html" });
-          res.write(data);
-          res.end();
-        });
-        break;
+app.use("/home", home);
+app.use("/public", public);
 
-      case r == "/public/search.html":
-        fs.readFile("../public/search.html", function (err, data) {
-          res.writeHead(200, { "Content-Type": "text/html" });
-          res.write(data);
-          res.end();
-        });
-        break;
-
-      case r == "/public/calander/calander.html":
-        fs.readFile("../public/calander/calander.html", function (err, data) {
-          res.writeHead(200, { "Content-Type": "text/html" });
-          res.write(data);
-          res.end();
-        });
-        break;
-
-      case r == "/public/blocks/blocks.html":
-        fs.readFile("../public/blocks/blocks.html", function (err, data) {
-          res.writeHead(200, { "Content-Type": "text/html" });
-          res.write(data);
-          res.end();
-        });
-        break;
-
-      case r == "/public/piano/piano.html":
-        fs.readFile("../public/piano/piano.html", function (err, data) {
-          res.writeHead(200, { "Content-Type": "text/html" });
-          res.write(data);
-          res.end();
-        });
-        break;
-
-      case r == "/public/waterfall/waterfall.html":
-        fs.readFile("../public/waterfall/waterfall.html", function (err, data) {
-          res.writeHead(200, { "Content-Type": "text/html" });
-          res.write(data);
-          res.end();
-        });
-        break;
-    }
-  })
-  .listen(8080);
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log("Listening on port: " + port);
+});
