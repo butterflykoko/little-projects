@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waterfall</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../style-sheets/index.css" />
@@ -19,7 +19,14 @@
 
       #waterfall {
         height: 40vh;
-        background: linear-gradient(180deg, #95cdfb, 20%, #aee2ff, #dff3fc, #91ccfc);
+        background: linear-gradient(
+          180deg,
+          #95cdfb,
+          20%,
+          #aee2ff,
+          #dff3fc,
+          #91ccfc
+        );
         animation: down 30s linear infinite;
       }
 
@@ -33,7 +40,8 @@
         }
       }
 
-      nav, #btn-container {
+      nav,
+      #btn-container {
         z-index: 1;
       }
 
@@ -44,11 +52,12 @@
         justify-content: space-evenly;
       }
 
-      .btn { 
-        border-radius: 20%; 
+      .btn {
+        border-radius: 20%;
       }
 
-      .btn-pos, .btn-pos:hover {
+      .btn-pos,
+      .btn-pos:hover {
         background-color: #fff5e080;
         border: 1px #66666680 solid;
       }
@@ -90,15 +99,13 @@
     <div id="btn-container">
       <button class="btn btn-pos" type="submit" onclick="up()">Up</button>
       <button class="btn btn-pos" type="submit" onclick="down()">Down</button>
-      <button class="btn btn-pos" type="reset" onclick="reset()">
-        Reset
-      </button>
+      <button class="btn btn-pos" type="reset" onclick="reset()">Reset</button>
     </div>
     <div id="waterfall"></div>
     <script src="waterfall.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
   </body>
