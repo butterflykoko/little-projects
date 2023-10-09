@@ -38,3 +38,7 @@ ul {
     padding: 0.25rem;
     border-radius: 5px;
 }
+
+.inactive {
+  color: #333333;
+}
