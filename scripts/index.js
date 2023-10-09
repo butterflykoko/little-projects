@@ -1,9 +1,17 @@
 const express = require("express"),
   app = express(),
-  home = require("./routes/home"),
-  public = require("./routes/public");
+  fs = require("fs"),
+  public = require("./public");
 
-app.use("/home", home);
+app.use(express.static("public"));
+
+app.get("/index.html", (req, res) => {
+  fs.readFile("../index.html", function (err, data) {
+    res.write(data);
+    res.end();
+  });
+});
+
 app.use("/public", public);
 
 const port = process.env.PORT || 8080;

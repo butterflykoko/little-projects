@@ -2,14 +2,6 @@ const express = require("express"),
   router = express.Router(),
   fs = require("fs");
 
-router.get("/public/", (req, res) => {
-  fs.readFile("../public/", function (err, data) {
-    res.write(data);
-    res.end();
-  });
-  next();
-});
-
 router.get("/public/search", (req, res) => {
   fs.readFile("../public/search", function (err, data) {
     res.write(data);
@@ -45,3 +37,5 @@ router.get("public/waterfall/waterfall.html", (req, res) => {
     res.end();
   });
 });
+
+module.exports = router;
