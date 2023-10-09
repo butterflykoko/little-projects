@@ -1,112 +1,62 @@
-"use strict";
-var apples = "apples.";
-console.log("These are " + apples);
-var x = 3;
-var y = 5;
-console.log(x + y);
-var cake = "cake";
-var strawberry = "strawberry";
-console.log(strawberry + " " + cake);
-var yellow = "yellow ";
-var house = "house";
-var yellowHouse = yellow + house;
-console.log(yellowHouse);
-let day = 6;
-switch (day) {
-    case 1:
-        console.log("Monday");
+const http = require("http");
+const fs = require("fs");
+
+http
+  .createServer(function (req, res) {
+    let r = req.url;
+    
+    switch (req.url) {
+      case r == "/index.html":
+        fs.readFile("../index.html", function (err, data) {
+          if (err) {
+            res.writeHead(404, { "Content-Type": "text/html" });
+            return res.end("404 Not Found");
+          }
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.write(data);
+          res.end();
+        });
         break;
-    case 2:
-        console.log("Tuesday");
+
+      case r == "/public/search.html":
+        fs.readFile("../public/search.html", function (err, data) {
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.write(data);
+          res.end();
+        });
         break;
-    case 3:
-        console.log("Wendsday");
+
+      case r == "/public/calander/calander.html":
+        fs.readFile("../public/calander/calander.html", function (err, data) {
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.write(data);
+          res.end();
+        });
         break;
-    case 4:
-        console.log("Thursday");
+
+      case r == "/public/blocks/blocks.html":
+        fs.readFile("../public/blocks/blocks.html", function (err, data) {
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.write(data);
+          res.end();
+        });
         break;
-    case 5:
-        console.log("Friday");
+
+      case r == "/public/piano/piano.html":
+        fs.readFile("../public/piano/piano.html", function (err, data) {
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.write(data);
+          res.end();
+        });
         break;
-    default:
-        console.log("Weekend");
-}
-let i = -1;
-while (i < 100) {
-    console.log(i);
-    i++;
-}
-for (let j = 0; j <= 10; j++) {
-    console.log(j);
-}
-function bread(flour, water, time) {
-    // Notes: flour and water must add up to 100
-    console.log("Flour: " + flour);
-    console.log("Water: " + water);
-    console.log("Mixing...");
-    console.log("Set minutes: " + time);
-    console.log("Baking...");
-    console.log("All done!");
-}
-bread(60, 40, 30);
-class dog {
-    breed;
-    age;
-    color;
-    constructor(breed, age, color) {
-        this.breed = breed;
-        this.age = age;
-        this.color = color;
+
+      case r == "/public/waterfall/waterfall.html":
+        fs.readFile("../public/waterfall/waterfall.html", function (err, data) {
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.write(data);
+          res.end();
+        });
+        break;
     }
-}
-let pugColors = ["black", "silver", "fawn"];
-class pug extends dog {
-    constructor(breed, age, color) {
-        super(breed, age, color);
-        this.color = pugColors;
-    }
-}
-var blackPug = new pug("pug", 0.8, pugColors[1]);
-console.log(blackPug);
-class animal {
-    name;
-    height;
-    constructor(name, height) {
-        this.name = name;
-        this.height = height;
-    }
-    setName(n) {
-        return (this.name = n);
-    }
-    getName() {
-        return this.name;
-    }
-    setHeight(h) {
-        return (this.height = h);
-    }
-    getHeight() {
-        return this.height;
-    }
-}
-const penguin = new animal();
-penguin.setName("penguin");
-penguin.setHeight(3.2);
-console.log(penguin.getName());
-class parentClass {
-    person;
-    constructor(person) {
-        this.person = person;
-    }
-}
-class childClass extends parentClass {
-    constructor(person) {
-        super(person);
-    }
-}
-class grandChild extends childClass {
-    constructor(person) {
-        super(person);
-    }
-}
-var myVariable = new grandChild("person");
-console.log(myVariable);
+  })
+  .listen(8080);
