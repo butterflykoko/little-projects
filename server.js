@@ -1,17 +1,14 @@
-const http = require("http"),
-  express = require("express"),
+const express = require("express"),
   path = require("path"),
-  app = express();
+  app = express(),
+  port = 8080;
 
-app.use(express.json());
 app.use(express.static("public"));
 
-app.use("/", (req, res) => {
+app.use("/index.html", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
-const server = http.createServer(app),
-  port = 8080;
-
-server.listen(port);
-console.debug("Server listening on port " + port);
+app.listen(port, () => {
+  console.log("Server listening at: " + port);
+});
