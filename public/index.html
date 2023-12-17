@@ -10,31 +10,28 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link href="./css/styles.css" rel="stylesheet"/>
+    <link href="./css/styles.css" rel="stylesheet" />
     <style>
       .flex-container {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: center;
+        gap: 25px;
       }
 
-      #grid-container {
+      .grid-container {
         display: grid;
         grid-template: 1fr / repeat(2, 1fr);
         gap: 25px;
       }
 
-      #piano-desc {
-        width: 20vw;
+      .content {
+        width: 100%;
       }
 
-      @media (max-width: 768px) {
-        #grid-container {
+      @media (max-width: 992px) {
+        .grid-container {
           grid-template: repeat(2, 1fr) / 1fr;
-        }
-
-        #piano-desc {
-          width: 100%;
         }
       }
     </style>
@@ -88,25 +85,37 @@
       <hr />
     </div>
     <div class="container flex-container">
-      <div id="grid-container">
+      <div class="grid-container">
         <img
           src="./assets/images/piano-preview.png"
           class="img-fluid border"
           alt="piano"
           width="400px"
         />
-        <div id="piano-desc">
+        <div class="content">
           <h2>Playable Piano</h2>
           <p class="body-font">
             Small piano conisting of 17 notes. Simply click or use a keyboard to
             play. When using a keyboard, press the letters or symbols that the
             piano shows.
           </p>
-          <a
-            class="btn btn-yellow"
-            href="./piano/piano.html"
-            role="button"
+          <a class="btn btn-yellow" href="./piano/piano.html" role="button"
             >Piano</a
+          >
+        </div>
+      </div>
+      <div class="grid-container">
+        <img
+          src="./assets/images/tic-tac-toe.png"
+          class="img-fluid border"
+          alt="tic tac toe"
+          width="400px"
+        />
+        <div class="content">
+          <h2>Tic Tac toe</h2>
+          <p class="body-font"></p>
+          <a class="btn btn-yellow" href="./tic-tac-toe/tic.html" role="button"
+            >Tic Tac Toe</a
           >
         </div>
       </div>
